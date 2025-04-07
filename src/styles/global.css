@@ -1,0 +1,36 @@
+body {
+  color: rgb(212, 212, 212);
+  background-color: #2b1b1b;
+  font-family: Arial;
+ } 
+  h1 {
+  color: rgb(240,240,240);;
+  font-size: 4rem;
+  font-family: 'Arial';
+  font-style: normal;
+  }
+  h2 {
+  color: rgb(240,240,240);
+  font-size: 2rem;
+}
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1 em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}
+a {
+  color: rgb(173, 203, 254);
+
+}
+.monospace {
+        font-family: monospace; /* Use a monospace font */
+        background-color: #f5f5f5; /* Light background for emphasis */
+        color: #333; /* Slightly darker font color for contrast */
+        padding: 2px 4px; /* Add padding for visual clarity */
+        border-radius: 4px; /* Rounded corners */
+        font-size: 0.95em; /* Optional: slightly smaller font size */
+    }
