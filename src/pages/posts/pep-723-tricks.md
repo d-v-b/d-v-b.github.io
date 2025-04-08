@@ -7,7 +7,7 @@ author: 'Davis Bennett'
 tags: ["PEP 723", "pytest"]
 ---
 
-When I find a bug that I don't understand, I usually want someone else to see the bug, because maybe *they* understand it, and can fix it. This requires getting another person to run my bugged code, which is in general rather complicated. 
+When I find a bug that I don't understand, I usually want someone else to see the bug, because maybe *they* understand it, and can fix it. This often requires getting another person to run my bugged code. which is in general rather complicated. 
 
 I'm pleased to report some small progress on this problem in the python ecosystem. First, I learned that you can run [`pytest`](https://docs.pytest.org/en/stable/) inside a python script with the following pattern:
 
