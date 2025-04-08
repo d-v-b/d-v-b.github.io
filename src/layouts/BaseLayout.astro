@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+import Navigation from "../components/Navigation.astro";
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const {pageTitle} = Astro.props;
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/jpg" href="/dvb_portrait.jpg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<Header/>
+		<h1>{pageTitle}</h1>
+        <slot/>
+		<script>
+		import "../scripts/menu.js"
+		</script>
+</body>
+</html>

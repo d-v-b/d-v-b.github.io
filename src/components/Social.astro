@@ -1,0 +1,25 @@
+---
+const {platform, username} = Astro.props;
+let userUrl = `https://www.${platform}.com/${username}`
+let faviconUrl = `https://www.${platform}.com/favicon.ico`
+
+if (platform == 'github') {
+    faviconUrl = 'https://github.githubassets.com/favicons/favicon.svg'
+}
+
+if (platform === 'bluesky') {
+  userUrl = `https://bsky.app/profile/${username}`
+  faviconUrl = `https://bsky.app/static/apple-touch-icon.png`
+}
+
+if (platform === 'linkedin') {
+  userUrl = `https://www.linkedin.com/in/${username}`
+}
+if (platform === 'google scholar'){
+    userUrl = 'https://scholar.google.com/citations?user=jndGfkAAAAAJ&hl=en'
+    faviconUrl = 'https://www.google.com/s2/favicons?domain=scholar.google.com'
+}
+---
+
+<a href={userUrl} target="_blank" rel="noopener noreferrer" title={platform}>
+  <img src={faviconUrl} style="width: 24px; height: 24px;">

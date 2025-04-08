@@ -1,0 +1,16 @@
+---
+const {post} = Astro.props;
+import '../styles/global.css';
+---
+<div class="post-preview">
+    <div class="post-preview-date">
+    {post.frontmatter.pubDate.toString().slice(0,10)}
+    </div>
+    <div class="post-preview-title">
+    <a href={post.url}>{post.frontmatter.title}
+    </div>
+    <div class="post-preview-description">
+    {post.frontmatter.description}
+    </div>
+    </a>
+</div>

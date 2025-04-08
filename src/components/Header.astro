@@ -1,10 +1,23 @@
 ---
-import Hamburger from './Hamburger.astro';
-import ThemeIcon from './ThemeIcon.astro';
+import Hamburger from "./Hamburger.astro";
+import ProfilePic from "./ProfilePic.astro";
+import Navigation from "./Navigation.astro";
+import Social from "./Social.astro";
 ---
 <header>
-  <nav>
-    <Hamburger />
-    <ThemeIcon />
-  </nav>
+    <div class="profile-container">
+    <ProfilePic/>
+    <div class="profile-text">
+    <p class="profile-name">Davis Bennett</p>
+    <div class="social-links">
+    <Social platform="github" username="d-v-b"/>
+    <Social platform="linkedin" username="davis-bennett-62922126a"/>
+    <Social platform="bluesky" username="davisvbennett.bsky.social"/>
+    <Social platform="google scholar" username="jndGfkAAAAAJ&hl"/>
+    </div>
+    <nav>
+        <Navigation/>
+    </nav>
+    </div>
+    </div>
 </header>

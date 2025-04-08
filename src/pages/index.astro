@@ -1,55 +1,12 @@
 ---
-import Header from "../components/Header.astro"
+import PostPreview from '../components/PostPreview.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
+//import { getCollection } from 'astro:content';
+//const allPosts = await getCollection('posts');
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Davis Bennett</title>
-		<style>
-
-		</style>
-	</head>
-	<body>
-		<Header></Header>
-		<h1>Davis Bennett</h1>
-		<p>Hello! I'm Davis. Since late 2023 I live in <a href='https://en.wikipedia.org/wiki/W%C3%BCrzburg'>Würzburg, Germany</a>, where I work as an independent 
-			software developer. I write software that helps people manage extremely large imaging datasets.
-			<p>
-				Here are some design concepts I gravitate around, in no particular order:
-				<ul>
-					<li>simplicity</li>
-					<li>composability</li>
-					<li>open source</li>
-					<li>tests, especially readable tests</li>
-					<li>types (the kind that help you model data)</li>
-					<li>observability</li>
-				</ul>
-			</p>
-		<h2>Projects</h2>
-		<ul>
-			<li><a href='www.openorganelle.org'>OpenOrganelle</a>, a web page for browsing electron microscopy images of cells and tissues at nanometer resolution. 
-				I designed and built this site for the Cellmap Project team. The frontend is React, and the backend is a combination of postgres (via supabase) and chunked zarr / n5 datasets
-				saved on s3. It was my first web project and I learned a ton from doing it.
-			<li><span class = monospace><a href=https://www.github.com/zarr-developers/zarr-python>zarr-python</a></span></li>
-			</ul>
-		<h2>Bio</h2>
-		<ul>
-			<li>1987 - 2005: Childhood and early education in <a href='https://en.wikipedia.org/wiki/Chapel_Hill,_North_Carolina'>Chapel Hill, North Carolina, USA</a>. </li>
-			<li>2005 - 2009: I completed a BA in philosophy at the <a href='https://en.wikipedia.org/wiki/University_of_North_Carolina_at_Chapel_Hill'>University of North Carolina at Chapel Hill</a>.</li>
-			<li>2010 - 2013: I worked as a technician in neuroscience labs.</li>
-			<li>2013 - 2019: I completed a PhD in Biology in <a href="https://ahrenslab.org">Misha Ahrens' lab</a> at <a href='https://en.wikipedia.org/wiki/Janelia_Research_Campus'>Janelia Research Campus</a> in Northern Virginia.</li>
-			<li>2019 - 2023: I worked as a software developer for the Cellmap Project Team at Janelia Research Campus.</li>
-			<li>2023 - present: I am an independent software developer.</li>
-		</ul>
-		<script>
-			document.querySelector('.hamburger')?.addEventListener('click', () => {
-			  document.querySelector('.nav-links')?.classList.toggle('expanded');
-			});
-		  </script>
-</body>
-</html>
+<BaseLayout pageTitle="">
+  <p><em>Recent posts</em></p>
+  <ul style="list-style-type: none; margin: 0">{allPosts.map((post: any) => <li><PostPreview post={post}></li>)}</ul>
+</BaseLayout>

@@ -1,36 +1,89 @@
+html {
+  background-color: #e0e0e0;
+  font-family: sans-serif;
+}
+
 body {
-  color: rgb(212, 212, 212);
-  background-color: #2b1b1b;
-  font-family: Arial;
- } 
-  h1 {
-  color: rgb(240,240,240);;
-  font-size: 4rem;
-  font-family: 'Arial';
-  font-style: normal;
-  }
-  h2 {
-  color: rgb(240,240,240);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80ch;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 1rem 0;
   font-size: 2rem;
 }
-  ul {
-    display: block;
-    list-style-type: disc;
-    margin-top: 1em;
-    margin-bottom: 1 em;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 40px;
+
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-style: italic;
+  text-transform: lowercase;
+  padding-right: 1rem;
 }
-a {
-  color: rgb(173, 203, 254);
+
+
+.expanded {
+  display: unset;
+}
+
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.profile-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 0rem;
+  gap: 1rem
+}
+
+.profile-text {
+  width: 65%;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  justify-content: space-evenly;
 
 }
-.monospace {
-        font-family: monospace; /* Use a monospace font */
-        background-color: #f5f5f5; /* Light background for emphasis */
-        color: #333; /* Slightly darker font color for contrast */
-        padding: 2px 4px; /* Add padding for visual clarity */
-        border-radius: 4px; /* Rounded corners */
-        font-size: 0.95em; /* Optional: slightly smaller font size */
-    }
+
+.profile-name {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.social-links {
+justify-content : flex-start;
+  display: flex;
+  margin-top: 0.5rem;
+  gap: 1rem
+}
+
+.post-preview-date {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.post-preview-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: lighter;
+}
+
+pre {
+  border-radius: 8px;
+  padding: 1rem;
+
+}
