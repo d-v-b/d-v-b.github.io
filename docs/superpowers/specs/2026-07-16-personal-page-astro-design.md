@@ -60,11 +60,11 @@ Sourced from d-v-b/cv (`cv.json`). Draft text:
 
 - email → mailto:davis.v.bennett@gmail.com (replaces stale Janelia address)
 - github → https://github.com/d-v-b
+- bluesky → https://bsky.app/profile/davisvbennett.bsky.social
 - orcid → https://orcid.org/0000-0001-7579-2848
 - google scholar → https://scholar.google.com/citations?user=jndGfkAAAAAJ&hl=en
 
-The old twitter link is dropped (not listed in the CV profiles). Flag for user
-at spec review.
+The old twitter link is dropped (user confirmed; replaced by bluesky).
 
 ### Blog
 
