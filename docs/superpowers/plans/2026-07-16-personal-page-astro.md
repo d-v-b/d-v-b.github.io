@@ -372,11 +372,23 @@ Assisted-by: ClaudeCode:claude-fable-5"
 ### Task 3: Blog content collection and pages
 
 **Files:**
-- Create: `src/content.config.ts`, `src/content/blog/hello-world.md`, `src/pages/blog/index.astro`, `src/pages/blog/[slug].astro`
+- Create: `src/content.config.ts`, `src/content/blog/hello-world.md`, `src/utils/format-date.ts`, `src/pages/blog/index.astro`, `src/pages/blog/[slug].astro`
 
 **Interfaces:**
 - Consumes: `Base.astro` from Task 2 (props `{ title: string; description?: string }`).
-- Produces: collection `blog` with frontmatter schema `{ title: string; date: Date; description?: string; draft: boolean (default false) }`. Post URLs are `/blog/<file-stem>/`.
+- Produces: collection `blog` with frontmatter schema `{ title: string; date: Date; description?: string; draft: boolean (default false) }`. Post URLs are `/blog/<file-stem>/`. Helper `formatDate(date: Date): string` in `src/utils/format-date.ts`.
+
+- [ ] **Step 0: Create src/utils/format-date.ts**
+
+```ts
+export function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+```
 
 - [ ] **Step 1: Create src/content.config.ts**
 
@@ -418,13 +430,11 @@ write something better.
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import { formatDate } from '../../utils/format-date';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
-
-const formatDate = (date: Date) =>
-  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
 <Base title="Blog — Davis Bennett">
@@ -449,6 +459,7 @@ const formatDate = (date: Date) =>
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import { formatDate } from '../../utils/format-date';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -460,9 +471,6 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-
-const formatDate = (date: Date) =>
-  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
 <Base title={`${post.data.title} — Davis Bennett`} description={post.data.description}>
