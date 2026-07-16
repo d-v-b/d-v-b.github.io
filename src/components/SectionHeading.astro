@@ -1,0 +1,17 @@
+---
+interface Props {
+  title: string;
+  id?: string;
+}
+
+const { title, id } = Astro.props;
+
+const slug =
+  id ??
+  title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+---
+
+<h2 id={slug}>{title}<a class="heading-anchor" href={`#${slug}`} aria-label={`Permalink to ${title}`}>#</a></h2>
