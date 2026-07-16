@@ -1,12 +1,25 @@
 ---
-import PostPreview from '../components/PostPreview.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import '../styles/global.css';
-//import { getCollection } from 'astro:content';
-//const allPosts = await getCollection('posts');
-const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+import Base from '../layouts/Base.astro';
+import SectionHeading from '../components/SectionHeading.astro';
 ---
-<BaseLayout pageTitle="">
-  <p><em>Recent posts</em></p>
-  <ul style="list-style-type: none; margin: 0">{allPosts.map((post: any) => <li><PostPreview post={post}></li>)}</ul>
-</BaseLayout>
+
+<Base title="Davis Bennett">
+  <h1>Davis Bennett</h1>
+  <p>
+    I'm a software engineer at <a href="https://developmentseed.org">Development Seed</a>,
+    where I work on open source geospatial projects. I build tools for working with
+    large scientific datasets — mostly storing, accessing, and analyzing big
+    multidimensional arrays. I'm a core developer of <a href="https://github.com/zarr-developers/zarr-python">zarr-python</a>, and I
+    prefer simple, composable tools that stand the test of time. I live in <a href="https://en.wikipedia.org/wiki/W%C3%BCrzburg">Würzburg</a>,
+    Germany.
+  </p>
+  <SectionHeading title="Background" />
+  <p>
+    I graduated from the <a href="https://en.wikipedia.org/wiki/University_of_North_Carolina_at_Chapel_Hill">University of North Carolina at Chapel Hill</a> in 2009 with a
+    philosophy degree. In 2019 I completed a PhD in biology in <a href="https://ahrenslab.org">Misha Ahrens' lab</a> via the <a href="https://en.wikipedia.org/wiki/Janelia_Research_Campus">Janelia</a> / <a href="https://en.wikipedia.org/wiki/University_of_Chicago">University
+    of Chicago</a> joint PhD program. After that I worked in scientific computing and data
+    engineering at Janelia (CellMap project team), then spent a few years as an
+    independent contractor for clients including HHMI, Earthmover, and the <a href="https://alleninstitute.org/division/neural-dynamics/">Allen
+    Institute for Neural Dynamics</a>, before joining Development Seed in 2026.
+  </p>
+</Base>

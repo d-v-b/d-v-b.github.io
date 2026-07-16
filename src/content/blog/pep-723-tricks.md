@@ -1,15 +1,12 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'PEP 723 and pytest'
-pubDate: '2025-04-06'
+date: 2025-04-06
 description: 'Distributing self-contained tests with PEP 723 inline script metadata.'
-author: 'Davis Bennett'
-tags: ["PEP 723", "pytest"]
 ---
 
 When I find a bug that I don't understand, I usually want someone else to see the bug, because maybe *they* understand it, and can fix it. This often requires getting another person to run my bugged code. which is in general rather complicated. 
 
-I'm pleased to report some small progress on this problem in the python ecosystem. First, I learned that you can run [`pytest`](https://docs.pytest.org/en/stable/) inside a python script with the following pattern:
+I'm pleased to report some small progress on this problem in the Python ecosystem. First, I learned that you can run [`pytest`](https://docs.pytest.org/en/stable/) inside a Python script with the following pattern:
 
 ```python
 
@@ -40,7 +37,7 @@ def test_kvstore_list(value):
 pytest.main([__file__])
 ```
 
-This is a bit of an off-label use of `pytest`. Instead of running the test suite of a library, `pytest` is being used as a tool for parameterizing execution of arbitrary python code, in this case code that reveals a "bug", or at least an error. 
+This is a bit of an off-label use of `pytest`. Instead of running the test suite of a library, `pytest` is being used as a tool for parameterizing execution of arbitrary Python code, in this case code that reveals a "bug", or at least an error. 
 
 `pytest` lets us compactly parametrize the function of interest in this script, and the PEP 723 inline script metadata makes the  script *extremely* distributible. 
 
