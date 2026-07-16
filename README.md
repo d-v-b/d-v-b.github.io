@@ -27,6 +27,6 @@ draft: true # optional; excludes the post from the built site
 
 ## Deploy
 
-Pushes to `master` build and deploy via GitHub Actions
+Pushes to `main` build and deploy via GitHub Actions
 (`.github/workflows/deploy.yml`). One-time setup: in the repo settings under
 **Pages**, set the source to **GitHub Actions**.

@@ -95,7 +95,7 @@ Header on every page: site name ("Davis Bennett") linking home, plus a
 ## Deployment
 
 - GitHub Actions workflow using `withastro/action` + `actions/deploy-pages`,
-  triggered on push to `master`.
+  triggered on push to `main`.
 - Site URL: `https://d-v-b.github.io` (set as `site` in astro.config.mjs; no
   `base` needed for a user site).
 - One-time manual step (documented in PR): switch repo Pages setting from

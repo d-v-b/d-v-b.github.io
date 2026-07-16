@@ -16,7 +16,7 @@
   `export PATH="$HOME/.nvm/versions/node/v22.22.0/bin:$PATH"`
 - Only runtime dependency: `astro` (^7.0.9). No integrations, no CSS framework, no webfonts, no client-side JavaScript.
 - Site URL is `https://d-v-b.github.io` (user Pages site — `site` set in config, no `base`).
-- Deploy branch is `master`.
+- Deploy branch is `main`.
 - Astro 7's compiler is strict: every non-void HTML element must be explicitly closed.
 - Commits: conventional commits, each with trailer `Assisted-by: ClaudeCode:claude-fable-5`.
 - Verification for this project is `astro build` + grepping `dist/` output (no unit-test framework — there is no logic beyond Astro's rendering).
@@ -552,7 +552,7 @@ Assisted-by: ClaudeCode:claude-fable-5"
 
 **Interfaces:**
 - Consumes: the building site from Tasks 1–3.
-- Produces: CI deploy on push to `master`. Requires a one-time manual repo setting flip (documented in README and the PR description).
+- Produces: CI deploy on push to `main`. Requires a one-time manual repo setting flip (documented in README and the PR description).
 
 - [ ] **Step 1: Create .github/workflows/deploy.yml**
 
@@ -561,7 +561,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -622,7 +622,7 @@ draft: true # optional; excludes the post from the built site
 
 ## Deploy
 
-Pushes to `master` build and deploy via GitHub Actions
+Pushes to `main` build and deploy via GitHub Actions
 (`.github/workflows/deploy.yml`). One-time setup: in the repo settings under
 **Pages**, set the source to **GitHub Actions**.
 ```
@@ -663,4 +663,4 @@ Assisted-by: ClaudeCode:claude-fable-5"
 
 - Run `npm run dev` and load `http://localhost:4321/`: index shows bio, header nav works, `/blog/` lists the demo post, the post page renders, footer links present on all pages.
 - Toggle OS dark mode (or emulate `prefers-color-scheme: dark` in devtools) and confirm colors flip.
-- After merge to `master`: flip repo **Settings → Pages → Source** to **GitHub Actions**, confirm the workflow run deploys, and check `https://d-v-b.github.io`.
+- After merge to `main`: flip repo **Settings → Pages → Source** to **GitHub Actions**, confirm the workflow run deploys, and check `https://d-v-b.github.io`.
