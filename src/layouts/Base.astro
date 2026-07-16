@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Davis Bennett, software engineer.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Davis Bennett</a>
+        <a href="/blog/">blog</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <ul>
+        <li><a href="mailto:davis.v.bennett@gmail.com">email</a></li>
+        <li><a href="https://github.com/d-v-b">github</a></li>
+        <li><a href="https://bsky.app/profile/davisvbennett.bsky.social">bluesky</a></li>
+        <li><a href="https://orcid.org/0000-0001-7579-2848">orcid</a></li>
+        <li><a href="https://scholar.google.com/citations?user=jndGfkAAAAAJ&hl=en">google scholar</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

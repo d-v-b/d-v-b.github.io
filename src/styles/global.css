@@ -1,0 +1,109 @@
+:root {
+  --bg: #ffffff;
+  --text: #1c1c1c;
+  --muted: #6b6b6b;
+  --link: #0b5aa2;
+  --rule: #e2e2e2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #131313;
+    --text: #e6e6e6;
+    --muted: #9c9c9c;
+    --link: #85b8e8;
+    --rule: #333333;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 3rem 1.25rem 2rem;
+  max-width: 65ch;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header nav {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+header nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header nav a:hover {
+  color: var(--text);
+}
+
+h1 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 2.5rem 0 0.75rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+time {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+ul.posts {
+  list-style: none;
+  padding: 0;
+}
+
+ul.posts li {
+  margin-bottom: 1.5rem;
+}
+
+ul.posts p {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer a {
+  color: var(--muted);
+}
+
+footer a:hover {
+  color: var(--text);
+}
